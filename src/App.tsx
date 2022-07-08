@@ -16,6 +16,7 @@ import { useState } from 'react';
 // 	},
 // });
 
+// TODO: Move this to another file
 const themeDark = createTheme({
 	palette: {
 		primary: {
