@@ -7,6 +7,9 @@ import {
 } from '@mui/material';
 import { NavBar } from './components/NavBar';
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { About } from './pages/About';
+import { Skills } from './pages/Skills';
 
 // const themeLight = createTheme({
 // 	palette: {
@@ -16,6 +19,7 @@ import { useState } from 'react';
 // 	},
 // });
 
+// TODO: Move this to another file
 const themeDark = createTheme({
 	palette: {
 		primary: {
@@ -26,7 +30,7 @@ const themeDark = createTheme({
 			primary: '#C0CBEB',
 			secondary: '#985757',
 		},
-		background: { default: '#1D1D1D', navbar: 'white' },
+		background: { default: '#1D1D1D', navbar: '#121212' },
 	},
 });
 
@@ -40,7 +44,10 @@ function App() {
 		<ThemeProvider theme={themeDark}>
 			<CssBaseline />
 			<NavBar />
-			<Typography color="textSecondary">Portfolio</Typography>
+			<Routes>
+				<Route path="/about" element={<About />}></Route>
+				<Route path="/skills" element={<Skills />}></Route>
+			</Routes>
 		</ThemeProvider>
 	);
 }
