@@ -53,7 +53,7 @@ export const NavBar = () => {
 	const classes = useStyles(theme);
 	const location = useLocation().pathname;
 
-	const activeRoute = (path) => {
+	const activeRoute = (path: ROUTES) => {
 		if (location.includes(path)) return true;
 		return false;
 	};
