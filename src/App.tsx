@@ -1,8 +1,8 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
-import { About } from './pages/About';
-import { Skills } from './pages/Skills';
+import { NavBar } from 'components/NavBar';
+import { About } from 'pages/About';
+import { Skills } from 'pages/Skills';
 
 // const themeLight = createTheme({
 // 	palette: {
