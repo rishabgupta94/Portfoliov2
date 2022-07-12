@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Link, useLocation } from 'react-router-dom';
-import { ROUTES } from 'constants/Routes';
+import { ROUTES } from '../constants/Routes';
 
 const drawerItems = [
 	{
