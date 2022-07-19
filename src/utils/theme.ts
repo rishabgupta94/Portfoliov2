@@ -14,6 +14,7 @@ export const themeDark = createTheme({
 			primary: '#C0CBEB',
 			secondary: '#985757',
 			third: '#4D90AD',
+			disabled: '#6C7180',
 		},
 		background: { default: '#1D1D1D', navbar: '#121212' },
 	},
