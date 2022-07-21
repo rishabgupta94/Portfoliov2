@@ -52,7 +52,7 @@ export const NavBar = () => {
 	return (
 		<>
 			<IconButton
-				color="inherit"
+				color="secondary"
 				aria-label="open drawer"
 				edge="start"
 				onClick={handleDrawerToggle}
@@ -60,6 +60,8 @@ export const NavBar = () => {
 			>
 				<MenuIcon fontSize="large" />
 			</IconButton>
+
+			{/* Mobile Drawer */}
 			<Drawer
 				container={container}
 				variant="temporary"
@@ -73,6 +75,7 @@ export const NavBar = () => {
 						backgroundColor: theme.palette.background.navbar,
 						display: 'flex',
 						justifyContent: 'center',
+						alignItems: 'center',
 					},
 				}}
 				sx={{
@@ -88,6 +91,8 @@ export const NavBar = () => {
 			>
 				<NavBarList drawerItems={drawerList} activeRoute={activeRoute} />
 			</Drawer>
+
+			{/* Desktop Drawer */}
 			<Drawer
 				sx={{
 					display: { xs: 'none', sm: 'block' },
