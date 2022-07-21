@@ -1,23 +1,30 @@
-import { ThemeOptions, Theme } from '@mui/material/styles';
-import React from 'react';
+import { Theme } from '@mui/material/styles';
 
 declare module '@mui/material/styles' {
 	interface Palette {
 		background?: {
 			navbar?: string;
 		};
+		text?: {
+			third?: string;
+		};
 	}
 	interface PaletteOptions {
 		background?: {
 			navbar?: string;
 		};
+		text?: {
+			third?: string;
+		};
 	}
 	interface TypeBackground {
 		navbar?: string;
 	}
+	interface TypeText {
+		third?: string;
+	}
 }
 
 declare module '@mui/styles/defaultTheme' {
-	// eslint-disable-next-line @typescript-eslint/no-empty-interface (remove this line if you don't have the rule enabled)
-	interface DefaultTheme extends Theme {}
+	type DefaultTheme = Theme;
 }
