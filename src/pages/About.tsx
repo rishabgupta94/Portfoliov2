@@ -14,7 +14,7 @@ export const About = () => {
 				spacing={5}
 				height={'100vh'}
 			>
-				<Grid item>
+				<Grid item xs={12} sm={12} md={6} flexDirection="column-reverse">
 					<Typography
 						marginLeft={1}
 						fontSize={'larger'}
