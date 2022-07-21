@@ -56,7 +56,7 @@ export const NavBar = () => {
 				aria-label="open drawer"
 				edge="start"
 				onClick={handleDrawerToggle}
-				sx={{ mr: 2, ml: 1, display: { sm: 'none' } }}
+				sx={{ mr: 2, ml: 1, display: { md: 'none' } }}
 			>
 				<MenuIcon fontSize="large" />
 			</IconButton>
@@ -79,7 +79,7 @@ export const NavBar = () => {
 					},
 				}}
 				sx={{
-					display: { xs: 'block', sm: 'none' },
+					display: { xs: 'block', sm: 'block', md: 'none' },
 					width: 100,
 					flexShrink: 0,
 					'& .MuiDrawer-paper': {
@@ -95,7 +95,7 @@ export const NavBar = () => {
 			{/* Desktop Drawer */}
 			<Drawer
 				sx={{
-					display: { xs: 'none', sm: 'block' },
+					display: { xs: 'none', sm: 'none', md: 'block' },
 					width: 100,
 					flexShrink: 0,
 					'& .MuiDrawer-paper': {
