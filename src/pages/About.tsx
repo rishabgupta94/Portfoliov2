@@ -1,8 +1,5 @@
 import { Container, Grid, Typography, useTheme } from '@mui/material';
-// import { makeStyles } from '@mui/styles';
 import React from 'react';
-
-// const useStyles = makeStyles(() => ({}));
 
 export const About = () => {
 	const theme = useTheme();
@@ -46,7 +43,7 @@ export const About = () => {
 						<span style={{ color: theme.palette.text.secondary }}>React </span>
 						with a focus on
 						<br />
-						creating an{' '}
+						creating a{' '}
 						<span style={{ color: theme.palette.text.secondary }}>
 							intuitive user interface.
 						</span>
