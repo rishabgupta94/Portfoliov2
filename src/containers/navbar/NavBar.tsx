@@ -1,22 +1,14 @@
-import {
-	Drawer,
-	IconButton,
-	List,
-	ListItem,
-	ListItemButton,
-	ListItemText,
-	useTheme,
-} from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ROUTES } from '../constants/Routes';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Drawer, IconButton, useTheme } from '@mui/material';
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { ROUTES } from '../../constants/Routes';
+import { NavBarList } from './NavBarList';
 
 const DRAWER_WIDTH_DESKTOP = 100;
 const DRAWER_WIDTH_MOBILE = 250;
 
-const drawerItems = [
+export const drawerList = [
 	{
 		name: 'ABOUT',
 		path: ROUTES.ABOUT,
@@ -35,38 +27,23 @@ const drawerItems = [
 	},
 ];
 
-const useStyles = makeStyles((theme) => ({
-	link: {
-		color: theme.palette.text.primary,
-		textDecoration: 'none',
-	},
-	listItemText: {
-		fontWeight: 'bold !important',
-	},
-	selected: {
-		'&.Mui-selected': {
-			backgroundColor: '#E7F0FE',
-			color: theme.palette.text.secondary,
-		},
-		'&.MuiListItem-button:hover': {
-			backgroundColor: '#E7F0FE',
-		},
-	},
-}));
-
 export const NavBar = () => {
 	const theme = useTheme();
-	const classes = useStyles(theme);
 	const location = useLocation().pathname;
+	const [mobileOpen, setMobileOpen] = useState(false);
 	const container =
 		window !== undefined ? () => window.document.body : undefined;
-
-	const [mobileOpen, setMobileOpen] = useState(false);
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
 
+	/**
+	 * Decides which item to highlight
+	 *
+	 * @param path the route path
+	 * @returns    a boolean if the window url includes the path
+	 */
 	const activeRoute = (path: ROUTES) => {
 		if (location.includes(path)) return true;
 		return false;
@@ -109,23 +86,7 @@ export const NavBar = () => {
 				}}
 				anchor="left"
 			>
-				<List>
-					{drawerItems.map((item, i) => (
-						<Link key={i} to={item.path} className={classes.link}>
-							<ListItem key={i} disablePadding>
-								<ListItemButton
-									selected={activeRoute(item.path)}
-									className={classes.selected}
-								>
-									<ListItemText
-										classes={{ primary: classes.listItemText }}
-										primary={item.name}
-									/>
-								</ListItemButton>
-							</ListItem>
-						</Link>
-					))}
-				</List>
+				<NavBarList drawerItems={drawerList} activeRoute={activeRoute} />
 			</Drawer>
 			<Drawer
 				sx={{
@@ -147,23 +108,7 @@ export const NavBar = () => {
 				anchor="left"
 				variant="permanent"
 			>
-				<List>
-					{drawerItems.map((item, i) => (
-						<Link key={i} to={item.path} className={classes.link}>
-							<ListItem key={i} disablePadding>
-								<ListItemButton
-									selected={activeRoute(item.path)}
-									className={classes.selected}
-								>
-									<ListItemText
-										classes={{ primary: classes.listItemText }}
-										primary={item.name}
-									/>
-								</ListItemButton>
-							</ListItem>
-						</Link>
-					))}
-				</List>
+				<NavBarList drawerItems={drawerList} activeRoute={activeRoute} />
 			</Drawer>
 		</>
 	);

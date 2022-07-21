@@ -1,6 +1,6 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
-import { NavBar } from './components/NavBar';
+import { NavBar } from './containers/navbar/NavBar';
 import { About } from './pages/About';
 import { Skills } from './pages/Skills';
 import { themeDark } from './utils/theme';
