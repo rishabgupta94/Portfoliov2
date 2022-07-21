@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.text.primary,
 		textDecoration: 'none',
 	},
+
 	selected: {
 		'&.Mui-selected': {
 			backgroundColor: '#E7F0FE',
@@ -39,7 +40,7 @@ export const NavBarList = ({
 	const theme = useTheme();
 	const classes = useStyles(theme);
 	return (
-		<List>
+		<List style={{ width: 'inherit' }}>
 			{drawerItems.map((item, i) => (
 				<Link key={i} to={item.path} className={classes.link}>
 					<ListItem key={i} disablePadding>
