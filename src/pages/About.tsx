@@ -15,19 +15,15 @@ export const About = () => {
 				height={'100vh'}
 			>
 				<Grid item xs={12} sm={12} md={6} flexDirection="column-reverse">
-					<Typography
-						marginLeft={1}
-						fontSize={'larger'}
-						color={theme.palette.text.third}
-					>
-						Hi, my name is
+					<Typography marginLeft={1} fontSize={'larger'} color={'gray'}>
+						Hello there, I&apos;m
 					</Typography>
 					<Typography
 						variant="h1"
 						fontWeight={500}
 						color={theme.palette.text.primary}
 					>
-						Rishab Gupta
+						Rishab.
 					</Typography>
 					<Typography
 						variant="h3"
@@ -35,7 +31,7 @@ export const About = () => {
 						gutterBottom
 						color={theme.palette.text.disabled}
 					>
-						I build websites
+						I build websites.
 					</Typography>
 					<Typography fontSize={'larger'} color={theme.palette.text.disabled}>
 						I am a Software Engineer, located in Halifax, Canada.
