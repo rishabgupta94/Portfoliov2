@@ -1,4 +1,4 @@
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { Container, CssBaseline, ThemeProvider } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 import { NavBar } from './containers/navbar/NavBar';
 import { About } from './pages/About';
@@ -16,10 +16,12 @@ function App() {
 		<ThemeProvider theme={themeDark}>
 			<CssBaseline />
 			<NavBar />
-			<Routes>
-				<Route path="/about" element={<About />}></Route>
-				<Route path="/skills" element={<Skills />}></Route>
-			</Routes>
+			<Container maxWidth="lg">
+				<Routes>
+					<Route path="/about" element={<About />}></Route>
+					<Route path="/skills" element={<Skills />}></Route>
+				</Routes>
+			</Container>
 		</ThemeProvider>
 	);
 }
