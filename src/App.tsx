@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { NavBar } from './containers/navbar/NavBar';
 import { About } from './pages/About';
 import { Skills } from './pages/Skills';
+import { Work } from './pages/Work';
 import { themeDark } from './utils/theme';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 				<Routes>
 					<Route path="/about" element={<About />}></Route>
 					<Route path="/skills" element={<Skills />}></Route>
+					<Route path="/work" element={<Work />}></Route>
 				</Routes>
 			</Container>
 		</ThemeProvider>
