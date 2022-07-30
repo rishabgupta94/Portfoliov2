@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export const workItems = [
 	'ReelData AI',
 	'Perennia',
-	// eslint-disable-next-line quotes
-	"St. Mary's Uni",
+	'St. Marys Uni',
 	'Optymyze',
 ];
 
