@@ -26,5 +26,6 @@ declare module '@mui/material/styles' {
 }
 
 declare module '@mui/styles/defaultTheme' {
-	type DefaultTheme = Theme;
+	// eslint-disable-next-line @typescript-eslint/no-empty-interface
+	interface DefaultTheme extends Theme {}
 }

@@ -6,13 +6,24 @@ import {
 	ListItemText,
 	useTheme,
 } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 import { useState } from 'react';
+
+const useStyles = makeStyles((theme) => ({
+	selected: {
+		'&.Mui-selected': {
+			color: theme.palette.text.third,
+			borderLeft: 'solid 3px',
+		},
+	},
+}));
 
 // eslint-disable-next-line quotes
 const workItems = ['ReelData AI', 'Perennia', "St. Mary's Uni", 'Optymyze'];
 
 export const Work = () => {
 	const theme = useTheme();
+	const classes = useStyles(theme);
 	const [selectedItem, setSelectedItem] = useState(0);
 
 	const onListItemClick = (
@@ -34,6 +45,7 @@ export const Work = () => {
 				{workItems.map((item, i) => (
 					<ListItem key={i} disablePadding>
 						<ListItemButton
+							className={classes.selected}
 							selected={selectedItem === i}
 							onClick={(event) => onListItemClick(event, i)}
 						>
